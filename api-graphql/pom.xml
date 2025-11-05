@@ -29,13 +29,13 @@
 
         <dependency>
             <groupId>com.graphql-java-kickstart</groupId>
-            <artifactId>graphql-spring-boot-starter</artifactId>
+            <artifactId>graphql-kickstart-spring-boot-starter</artifactId>
             <version>${graphql-kickstart.version}</version>
         </dependency>
         <dependency>
             <groupId>com.graphql-java-kickstart</groupId>
-            <artifactId>graphiql-spring-boot-starter</artifactId>
-            <version>${graphql-kickstart.version}</version> 
+            <artifactId>graphiql-kickstart-spring-boot-starter</artifactId>
+            <version>${graphql-kickstart.version}</version>
             <scope>runtime</scope>
         </dependency>
 
