@@ -1,0 +1,44 @@
+# src/main/resources/graphql/schema.graphqls
+
+# ==================== TIPOS ====================
+
+type Atraccion {
+  id: Int!
+  nombre: String
+  codigo: String
+  fechaInauguracion: String # Se usa String para mapear java.time.LocalDate
+  ultimaRevision: String
+  descripcion: String
+  estado: Boolean
+}
+
+# Define la estructura de datos para la creación/actualización
+input AtraccionInput {
+  id: Int
+  nombre: String
+  codigo: String
+  fechaInauguracion: String
+  ultimaRevision: String
+  descripcion: String
+  estado: Boolean
+}
+
+# ==================== QUERIES (Lectura) ====================
+
+type Query {
+  # Retorna una lista de Atracciones
+  todasAtracciones: [Atraccion!]! 
+  
+  # Retorna una Atraccion por su ID
+  atraccionPorId(id: Int!): Atraccion
+}
+
+# ==================== MUTATIONS (Escritura) ====================
+
+type Mutation {
+  # Mutación para crear o actualizar una atracción
+  guardarAtraccion(atraccionInput: AtraccionInput!): Atraccion!
+  
+  # Mutación para actualizar solo el estado
+  actualizarEstadoAtraccion(id: Int!, nuevoEstado: Boolean!): Atraccion!
+}
